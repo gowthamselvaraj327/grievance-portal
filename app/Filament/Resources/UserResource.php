@@ -30,7 +30,7 @@ use App\Filament\Resources\UserResource\Pages\ListUsers;
 use App\Filament\Resources\UserResource\Pages\CreateUser;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Filament\Resources\UserResource\RelationManagers\RolesRelationManager;
-
+use Filament\Tables\Filters\SelectFilter;
 
 
 class UserResource extends Resource
@@ -85,7 +85,7 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('email')->sortable()->searchable(),
             ])
             ->filters([
-                //
+                SelectFilter::make('Roles')->relationship('roles', 'name')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('grievances', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('rollno');
-            $table->string('dept');
+            $table->string('email');
+            $table->string('place');
             $table->string('subject');
             $table->string('desc');
-            $table->string('main_image');
+            $table->string('image');
             $table->string('places_id');
             $table->boolean('is_completed')->default(0);
+            $table->string('remark');
             $table->timestamps();
         });
     }

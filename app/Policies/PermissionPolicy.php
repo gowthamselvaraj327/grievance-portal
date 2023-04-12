@@ -17,7 +17,7 @@ class PermissionPolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function viewAny(User $user) {
-        return $user->hasPermissionTo('read: permission');
+        return $user->hasPermissionTo('permission read');
     }
 
     /**
@@ -27,7 +27,7 @@ class PermissionPolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function create(User $user) {
-        return $user->hasPermissionTo('create: permission');
+        return $user->hasPermissionTo('permission create');
     }
 
     /**
@@ -38,7 +38,7 @@ class PermissionPolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function update(User $user, Permission $permission) {
-        return $user->hasPermissionTo('update: permission');
+        return $user->hasPermissionTo('permission update');
     }
 
     /**
@@ -49,6 +49,6 @@ class PermissionPolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function delete(User $user, Permission $permission) {
-        return $user->hasPermissionTo('delete: permission');
+        return $user->hasPermissionTo('permission delete');
     }
 }

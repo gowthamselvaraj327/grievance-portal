@@ -17,7 +17,7 @@ class RolePolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function viewAny(User $user) {
-        return $user->hasPermissionTo('read: role');
+        return $user->hasPermissionTo('role read');
     }
 
     /**
@@ -27,7 +27,7 @@ class RolePolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function create(User $user) {
-        return $user->hasPermissionTo('create: role');
+        return $user->hasPermissionTo('role create');
     }
 
     /**
@@ -38,7 +38,7 @@ class RolePolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function update(User $user, Role $role) {
-        return $user->hasPermissionTo('update: role');
+        return $user->hasPermissionTo('role update');
     }
 
     /**
@@ -49,6 +49,6 @@ class RolePolicy
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function delete(User $user, Role $role) {
-        return $user->hasPermissionTo('delete: role');
+        return $user->hasPermissionTo('role delete');
     }
 }
